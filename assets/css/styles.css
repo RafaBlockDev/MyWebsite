@@ -269,7 +269,7 @@ img {
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 295px;
+    width: 500px;
 }
 
 
@@ -376,6 +376,11 @@ img {
 
 .skills__img {
     border-radius: .5rem;
+}
+
+.skills__img1 {
+    border-radius: .5rem;
+    align-items: center;
 }
 
 
