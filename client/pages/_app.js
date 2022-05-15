@@ -1,5 +1,15 @@
 import '../styles/globals.css'
-npm install @rainbow-me/rainbowkit wagmi ethers
+
+import '@rainbow-me/rainbowkit/styles.css';
+
+import {
+  apiProvider,
+  configureChains,
+  getDefaultWallets,
+  RainbowKitProvider,
+} from '@rainbow-me/rainbowkit';
+
+import { chain, createClient, WagmiProvider } from 'wagmi';
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
