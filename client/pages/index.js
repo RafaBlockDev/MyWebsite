@@ -14,41 +14,41 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Hello!  👋🏻  I am <a href="https://twitter.com/Rafael41603219">rafaelfuentes.eth!</a>
+          Hello!  👋🏻  I am <a href="https://twitter.com/Rafael41603219">rafaelfuentes.eth! 👨🏻‍💻</a>
         </h1>
 
         <ConnectButton />
 
         <p className={styles.description}>
-          I am blockchain developer
+          I am blockchain and web3 developer 🌎
         </p>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
+          <a href="https://github.com/RafaBlockDev" className={styles.card}>
+            <h2>Github &rarr;</h2>
+            <p>Look my github and find interesting projects in blockchain and web3! 🚀</p>
           </a>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
+          <a href="https://twitter.com/Rafael41603219" className={styles.card}>
+            <h2>Twitter &rarr;</h2>
+            <p>Find me on Twitter where I share and tweet very good content! 👻</p>
           </a>
 
           <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
+            src="/CV-Rafael.pdf"
             className={styles.card}
           >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
+            <h2>CV Resume &rarr;</h2>
+            <p>Read my CV Resume and find my hard skills and my experience! 😎</p>
           </a>
 
           <a
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             className={styles.card}
           >
-            <h2>Deploy &rarr;</h2>
+            <h2>Cypherpunk &rarr;</h2>
             <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
+              I am into the cypherpunk revolution where I combat with web3! 🏴‍☠️
             </p>
           </a>
         </div>
