@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }) {
   );
   
   const { connectors } = getDefaultWallets({
-    appName: 'My RainbowKit App',
+    appName: 'Rafa´s portafolio 👋🏻',
     chains
   });
   
@@ -30,8 +30,15 @@ function MyApp({ Component, pageProps }) {
     connectors,
     provider
   })
-  
-  return <Component {...pageProps} />
+
+  return (
+    <WagmiProvider client={wagmiClient}>
+      <RainbowKitProvider chains={chains}>
+        <Component />
+      </RainbowKitProvider>
+    </WagmiProvider>
+  );
+
 }
 
 export default MyApp
