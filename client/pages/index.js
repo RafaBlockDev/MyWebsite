@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { ConnectButton } from '@rainbow-me/rainbowkit';
-import { pdf } from "../public/pdf/CV-Rafael.pdf";
 
 export default function Home() {
   return (
@@ -36,20 +35,20 @@ export default function Home() {
           </a>
 
           <a
-            src="/CV-Rafael.pdf"
+            href="https://www.linkedin.com/in/rafael-f-b4809120a/"
             className={styles.card}
           >
-            <h2>CV Resume &rarr;</h2>
-            <p>Read my CV Resume and find my hard skills and my experience! 😎</p>
+            <h2>LinkedIn &rarr;</h2>
+            <p>Found my experiences, my skills, posts and my professional profile! 😎</p>
           </a>
 
           <a
-            file={pdf}
+          href=""
             className={styles.card}
           >
-            <h2>Cypherpunk &rarr;</h2>
+            <h2>Articles &rarr;</h2>
             <p>
-              I am into the cypherpunk revolution where I combat with web3! 🏴‍☠️
+              Look my articles, my research, and tutorials done for me, about blockchain! 📚
             </p>
           </a>
         </div>
