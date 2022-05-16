@@ -34,7 +34,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <WagmiProvider client={wagmiClient}>
-      <RainbowKitProvider chains={chains}>
+      <RainbowKitProvider chains={chains} showRecentTransactions={true} {...etc}>
         <Component {...pageProps}/>
       </RainbowKitProvider>
     </WagmiProvider>
