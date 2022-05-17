@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css'
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 export default function Home() {
+
   return (
     <div className={styles.container}>
       <Head>
@@ -22,6 +23,7 @@ export default function Home() {
         <p className={styles.description}>
           I am blockchain and web3 developer 🌎
         </p>
+
 
         <div className={styles.grid}>
           <a href="https://github.com/RafaBlockDev" className={styles.card}>
