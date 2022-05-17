@@ -9,6 +9,7 @@
     "hardhat": "^2.9.5"
   },
   "dependencies": {
+    "@openzeppelin/contracts": "^4.6.0",
     "@pdftron/webviewer": "^8.5.0"
   }
 }
