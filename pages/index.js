@@ -21,7 +21,7 @@ export default function Home() {
         <ConnectButton />
 
         <p className={styles.description}>
-          I am blockchain and web3 developer 🌎
+          I am blockchain and web3 developer, consultant and researcher 🌎
         </p>
 
 
