@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { ConnectButton } from '@rainbow-me/rainbowkit';
+import ButMeACoffee from '../components/ButMeACoffee';
 
 export default function Home() {
 
@@ -55,6 +56,8 @@ export default function Home() {
           </a>
         </div>
       </main>
+
+      <ButMeACoffee/>
 
       <footer className={styles.footer}>
         <a
