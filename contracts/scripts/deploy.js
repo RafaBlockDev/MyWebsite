@@ -1,4 +1,10 @@
 const main = async () => {
+  const [deployer] = await hre.ethers.getSigners();
+  const accountBalance = await deployer.getBalance();
+
+  console.log("Deploying smart contract by: ", deployer.address);
+  console.log("Account balance: ", accountBalance.toString());
+
   const Coffee = await hre.ethers.getContractFactory("Coffee");
   const coffee = await Coffee.deploy();
 
