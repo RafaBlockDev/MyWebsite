@@ -1,7 +1,9 @@
 const { ethers } = require("../contracts/node_modules/ethers/lib")
 const { ToastContainer, toast } = require("react-toastify");
+const contractABI = require("./contractABI");
+const contractAddress = require("./contractAddress");
 
-const buyCoffee = async () => {
+export const buyCoffee = async () => {
     try {
       const { ethereum } = window;
 
