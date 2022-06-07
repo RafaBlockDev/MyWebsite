@@ -7,22 +7,27 @@ require("solidity-coverage");
 
 module.exports = {
   solidity: "0.8.4",
-  /*
   networks: {
-    ropsten: {
-      url: process.env.ROPSTEN_URL || "",
+    mumbai: {
+      url: process.env.ALCHEMY_MUMBAI_URL,
       accounts:
-        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+        [process.env.PRIVATE_KEY_MUMBAI]
     },
   },
-  */
+  settings: {
+    optimizer: {
+      enabled: true,
+      runs: 500
+    }
+  },
   gasReporter: {
-    enabled: true,
+    srcPath: "./contracts",
     currency: "USD",
-  },
-  /*
-  etherscan: {
-    apiKey: process.env.ETHERSCAN_API_KEY,
-  },
-  */
+    gasPrice: 21,
+    enabled: true,
+    token: 'ETH',
+    gasPriceAPI: "https://api.etherscan.io/api?module=proxy&action=eth_gasPrice",
+    showTimeSpent: true,
+    coinmarketcap: process.env.COINMARKETCAP_API_KEY
+  }
 };
