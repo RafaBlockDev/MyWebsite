@@ -1,9 +1,62 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import React, { useEffect, useState } from "react";
 import styles from '../styles/Home.module.css'
+import abi from "../utils/Contract.js";
 import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { ethers } from '../contracts/node_modules/ethers/lib';
 
 export default function Home() {
+  // Contract address and ABI
+  const contractAddress = "0x3bE20B28657Ff1b9a915f16B0263D5F1D65e0c9d";
+  const contractABI = abi.abi
+
+  // Component State
+  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
+  const [memos, setMemos] = useState("");
+
+  const onNameChange = (event) => {
+    setName(event.target.value);
+  }
+
+  const onMessageChange = (event) => {
+    setMessage(event.target.value);
+  }
+
+  const buyCoFFee = async () => {
+    try {
+      const {ethereum} = window;
+
+      if(ethereum) {
+        const provider = new ethers.providers.Web3Provider(ethereum, "any");
+        const signer = provider.getSigners();
+        const BuyMeACoffee = new ethers.Contract(
+          contractAddress,
+          contractABI,
+          signer
+        );
+
+        console.log("Buying coffee...")
+        const coffeeTxn = await buyCoffee.buyCoFFee(
+          name ? name : "anon",
+          message ? message : "Enjoy your coffee",
+          {value: ethers.utils.parseEther("1")}
+        );
+
+        await coffeeTxn.wait();
+
+        console.log("mined ", coffeeTxn.hash);
+        console.log("coffee purchased");
+
+        // Clear the form fields
+        setName("");
+        setMessage("");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className={styles.container}>
