@@ -209,12 +209,12 @@ export default function Home() {
                 >
                 </textarea>
               </div>
-              <div>
+              <div className={styles.divButton}>
                 <button
                   type={styles.button}
                   onClick={buyCoFFee}
                 >
-                  Send 1 Coffee for 1 Matic
+                  Send coffee
                 </button>
               </div>
             </form>
