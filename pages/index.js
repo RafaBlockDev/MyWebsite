@@ -228,8 +228,55 @@ export default function Home() {
           </a>
         </div>
 
-        
+        <div className={styles.buyCoffe}>
+          <h2 className={styles.secondTitle}>Buy me a Coffee ☕️</h2>
 
+          <div className={styles.divBoxes}>
+            <form className={styles.formContent}>
+              <div className={styles.formgroup}>
+                <label className={styles.labelText}>
+                    Name 🙈
+                </label>
+                <br/>
+                <div className={styles.formDivInput}>
+                  <input
+                    id="name"
+                    type="text"
+                    placeholer="hola"
+                    ///onChange={onNameChange}
+                  />
+                </div>
+              </div>
+              <br/>
+
+              <div className={styles.formgroup}>
+                  <label className={styles.labelText}>
+                    Send to Rafa a message 💌
+                  </label>
+                <br/>
+                <div className={styles.formTextDiv}>
+                  <textarea
+                    className={styles.inputCon}
+                    rows={3}
+                    placeholder="Enjoy your gift! "
+                    id="message"
+                    ///onChange={}
+                    required
+                  >
+                  </textarea>
+                </div>  
+              </div>
+              <div className={styles.divButton}>
+                <button
+                  type={styles.button}
+                  ///onClick={}
+                >
+                  Send ☕️
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
 
       </main>
 
