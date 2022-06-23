@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { ConnectButton } from '@rainbow-me/rainbowkit';
-import ButMeACoffee from '../components/ButMeACoffee';
 
 export default function Home() {
 
@@ -51,13 +50,21 @@ export default function Home() {
           >
             <h2>Articles &rarr;</h2>
             <p>
-              Look my articles, my research, and tutorials done for me, about blockchain! 📚
+              Look my articles, and researcher done for me, about blockchain! 📚
+            </p>
+          </a>
+
+          <a
+          href="https://medium.com/@rafafuentesrangel"
+            className={styles.card}
+          >
+            <h2>Buy me a coffee &rarr;</h2>
+            <p>
+              Buy me a coffee with your name and I´ll gift you something! 🎁
             </p>
           </a>
         </div>
       </main>
-
-      <ButMeACoffee/>
 
       <footer className={styles.footer}>
         <a
