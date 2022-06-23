@@ -99,6 +99,33 @@
   margin-left: 0.5rem;
 }
 
+.secondTitle {
+  font-size: 50px;
+  align-items: center;
+}
+
+.buyCoffe {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.formgroup {
+  margin: 10px 10px 0 10px;
+  padding: 0px 10px 10px 10px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  border-color: black;
+}
+
+.button {
+  margin: 1rem;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;

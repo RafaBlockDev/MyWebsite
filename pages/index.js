@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import React, { useEffect, useState } from "react";
 import styles from '../styles/Home.module.css'
-import abi from "../utils/Contract.js";
+import abi from "../utils/Contract.json";
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { ethers } from '../contracts/node_modules/ethers/lib';
 
@@ -167,12 +167,60 @@ export default function Home() {
           href="https://medium.com/@rafafuentesrangel"
             className={styles.card}
           >
-            <h2>Buy me a coffee &rarr;</h2>
+            <h2>Portafolio &rarr;</h2>
             <p>
-              Buy me a coffee with your name and I´ll gift you something! 🎁
+              This is my portafolio where you will find my own projects... 🦾
             </p>
           </a>
         </div>
+
+        <div className={styles.buyCoffe}>
+          <h2 className={styles.secondTitle}>Buy me a Coffee ☕️</h2>
+
+          <div>
+            <form>
+              <div className={styles.formgroup}>
+                <label>
+                    Name
+                </label>
+                <br/>
+
+                <input
+                  id="name"
+                  type="text"
+                  placeholer="anon"
+                  onChange={onNameChange}
+                />
+              </div>
+              <br/>
+
+              <div className={styles.formgroup}>
+                  <label>
+                    Send to Rafa a message
+                  </label>
+                <br/>
+
+                <textarea
+                  rows={3}
+                  placeholder="Enjoy your coffee!"
+                  id="message"
+                  onChange={onMessageChange}
+                  required
+                >
+                </textarea>
+              </div>
+              <div>
+                <button
+                  type={styles.button}
+                  onClick={buyCoFFee}
+                >
+                  Send 1 Coffee for 1 Matic
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
       </main>
 
       <footer className={styles.footer}>
