@@ -102,6 +102,8 @@
 .secondTitle {
   font-size: 50px;
   align-items: center;
+  text-align: center;
+  margin-bottom: 0px;
 }
 
 .buyCoffe {
@@ -109,14 +111,38 @@
   padding: 1rem;
 }
 
+.divBoxes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formContent {
+  margin-top: 1rem;
+}
+
 .formgroup {
-  margin: 10px 10px 0 10px;
-  padding: 0px 10px 10px 10px;
+  margin: 10px 10px 10px 10px;
+  max-width: 300px;
+  padding: 10px 10px 10px 10px;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   border: 1px solid black;
   border-radius: 10px;
   border-color: black;
+}
+
+.formDivInput {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formTextDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button {
@@ -130,6 +156,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.labelText {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.inputCon {
+  margin: 0px auto;
 }
 
 @media (max-width: 600px) {
