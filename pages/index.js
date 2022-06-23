@@ -7,6 +7,7 @@ import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { ethers } from '../contracts/node_modules/ethers/lib';
 
 export default function Home() {
+  /*
   // Contract address and ABI
   const contractAddress = "0x3bE20B28657Ff1b9a915f16B0263D5F1D65e0c9d";
   const contractABI = abi.abi
@@ -82,7 +83,7 @@ export default function Home() {
     }
   };
 
-  useEffect(() => {
+   useEffect(() => {
     let buyCoffee;
     getMemos();
 
@@ -112,7 +113,60 @@ export default function Home() {
 
       buyCoffee.on("NewMemo", onNewMemos);
     }
-  }, []);
+  }, []);*/
+
+
+  /* 
+          <div className={styles.buyCoffe}>
+          <h2 className={styles.secondTitle}>Buy me a Coffee ☕️</h2>
+
+          <div className={styles.divBoxes}>
+            <form className={styles.formContent}>
+              <div className={styles.formgroup}>
+                <label className={styles.labelText}>
+                    Name 🙈
+                </label>
+                <br/>
+                <div className={styles.formDivInput}>
+                  <input
+                    id="name"
+                    type="text"
+                    placeholer="hola"
+                    onChange={onNameChange}
+                  />
+                </div>
+              </div>
+              <br/>
+
+              <div className={styles.formgroup}>
+                  <label className={styles.labelText}>
+                    Send to Rafa a message
+                  </label>
+                <br/>
+                <div className={styles.formTextDiv}>
+                  <textarea
+                    className={styles.inputCon}
+                    rows={3}
+                    placeholder="Enjoy your coffee!"
+                    id="message"
+                    onChange={onMessageChange}
+                    required
+                  >
+                  </textarea>
+                </div>  
+              </div>
+              <div className={styles.divButton}>
+                <button
+                  type={styles.button}
+                  onClick={buyCoFFee}
+                >
+                  Send coffee
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+  */
 
   return (
     <div className={styles.container}>
@@ -174,55 +228,8 @@ export default function Home() {
           </a>
         </div>
 
-        <div className={styles.buyCoffe}>
-          <h2 className={styles.secondTitle}>Buy me a Coffee ☕️</h2>
+        
 
-          <div className={styles.divBoxes}>
-            <form className={styles.formContent}>
-              <div className={styles.formgroup}>
-                <label className={styles.labelText}>
-                    Name
-                </label>
-                <br/>
-                <div className={styles.formDivInput}>
-                  <input
-                    id="name"
-                    type="text"
-                    placeholer="hola"
-                    onChange={onNameChange}
-                  />
-                </div>
-              </div>
-              <br/>
-
-              <div className={styles.formgroup}>
-                  <label className={styles.labelText}>
-                    Send to Rafa a message
-                  </label>
-                <br/>
-                <div className={styles.formTextDiv}>
-                  <textarea
-                    className={styles.inputCon}
-                    rows={3}
-                    placeholder="Enjoy your coffee!"
-                    id="message"
-                    onChange={onMessageChange}
-                    required
-                  >
-                  </textarea>
-                </div>  
-              </div>
-              <div className={styles.divButton}>
-                <button
-                  type={styles.button}
-                  onClick={buyCoFFee}
-                >
-                  Send coffee
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
 
       </main>
 
