@@ -3,17 +3,12 @@ const { expect } = require("chai");
 
 describe("Coffee", function () {
 
-    it("It should send a transaction between 2 persons", async = () => {
-        let user;
+    it("It should deploythe smart contract", async () => {
+        console.log("📝 Compiling smart contract...");
         const Coffee = await ethers.getContractFactory("Coffee");
-        const coffee = await Coffee.deployed();
-
-        const [deployer, user] = await ethers.getSigners();
-
+        console.log("🚀 Deploying smart contract...")
+        const coffee = await Coffee.deploy();
         await coffee.deployed();
-        let deployerBalance = await coffee.balanceOf(deployer.address);
-
-        expect(deployerBalance).to.equal(100);
-        
+        console.log("Smart contract deployed at: ", coffee.address);
     })
 })
