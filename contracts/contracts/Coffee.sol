@@ -44,4 +44,19 @@ contract Coffee {
         /// @dev Emit a log event when a new memo is created
         emit NewMemo(msg.sender, block.timestamp, _name, _message);
     }
+
+    /**
+     * @dev Send the entire balance stored in this contract to the owner
+     */
+    function withdrawTips() public {
+        address(this).balance;
+        require(owner.send(address(this).balance));
+    }
+
+    /**
+     * @dev All the memos stored received on the blockchain
+     */
+    function getMemos() public view returns (Memo[] memory) {
+        return memos;
+    }
 }
