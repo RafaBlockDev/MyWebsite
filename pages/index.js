@@ -46,7 +46,7 @@ export default function Home() {
           </a>
 
           <a
-          href=""
+          href="https://medium.com/@rafafuentesrangel"
             className={styles.card}
           >
             <h2>Articles &rarr;</h2>
