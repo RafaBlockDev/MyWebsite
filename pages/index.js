@@ -2,9 +2,9 @@ import Head from 'next/head'
 import Image from 'next/image'
 import React, { useEffect, useState } from "react";
 import styles from '../styles/Home.module.css'
-import abi from "../utils/Contract.json";
+// import abi from "../utils/Contract.json";
 import { ConnectButton } from '@rainbow-me/rainbowkit';
-import { ethers } from '../contracts/node_modules/ethers/lib';
+// import { ethers } from 'hardhat';
 
 export default function Home() {
   /*
