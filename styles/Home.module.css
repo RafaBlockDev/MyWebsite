@@ -99,16 +99,16 @@
   margin-left: 0.5rem;
 }
 
+.buyCoffe {
+  margin: 1rem;
+  padding: 1rem;
+}
+
 .secondTitle {
   font-size: 50px;
   align-items: center;
   text-align: center;
   margin-bottom: 0px;
-}
-
-.buyCoffe {
-  margin: 1rem;
-  padding: 1rem;
 }
 
 .divBoxes {
@@ -130,7 +130,7 @@
   flex-direction: column;
   border: 1px solid black;
   border-radius: 10px;
-  border-color: black;
+  border-color: #eaeaea;
 }
 
 .formDivInput {
@@ -145,9 +145,23 @@
   justify-content: center;
 }
 
+.labelText {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.inputCon {
+  border-radius: 0.4rem;
+  border-color: #eaeaea;
+}
+
 .button {
   align-items: center;
   justify-content: center;
+  border-radius: 0.4rem;
+  height: 2rem;
+  width: 5rem;
 }
 
 .divButton {
@@ -156,16 +170,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.labelText {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-
-.inputCon {
-  margin: 0px auto;
 }
 
 @media (max-width: 600px) {

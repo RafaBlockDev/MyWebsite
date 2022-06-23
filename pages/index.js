@@ -268,7 +268,8 @@ export default function Home() {
               </div>
               <div className={styles.divButton}>
                 <button
-                  type={styles.button}
+                  type=""
+                  className={styles.button}
                   ///onClick={}
                 >
                   Send ☕️
