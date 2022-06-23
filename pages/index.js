@@ -58,6 +58,62 @@ export default function Home() {
     }
   };
 
+  const getMemos = async () => {
+    try {
+      const { ethereum } = window;
+      if(ethereum) {
+        const provider = new ethers.providers.Web3Provider(ethereum);
+        const signer = provider.getSigner();
+        const buyCoffee = new ethers.Contract(
+          contractAddress,
+          contractABI,
+          signer
+        );
+
+        console.log("Fetching memos from the blockchian...");
+        const memos = await buyCoffee.getMemos();
+        console.log("Fetched!!");
+        setMemos(memos);
+      } else {
+        console.log("Metamask is not connected");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    let buyCoffee;
+    getMemos();
+
+    const onNewMemos = (from, timestamp, name, message) => {
+      console.log.log("Memo received ", from, timestamp, name, message);
+      setMemos((prevState) => [
+        ...prevState,
+        {
+          address: from,
+          timestamp: newDate(timestamp * 1000),
+          message,
+          className
+        }
+      ]);
+    };
+
+    const { ethereum } = window;
+
+    if (ethereum) {
+      const provider = new ethers.providers.Web3Provider(ethereum, "any");
+      const signer = provider.getSigner();
+      buyCoffee = new ethers.Contract(
+        contractAddress,
+        contractABI,
+        signer
+      );
+
+      buyCoffee.on("NewMemo", onNewMemos);
+    }
+  }, []);
+
   return (
     <div className={styles.container}>
       <Head>
