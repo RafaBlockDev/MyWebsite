@@ -279,8 +279,8 @@ export default function Home() {
       {currentAccount && (memos.map((memo, idx) => {
         return (
           <div key={idx} className={styles.memoShowMessage}>
-            <p className={styles.messageMemos}>"{memo.message}"</p>
-            <p>From: {memo.name} at {memo.timestamp.toString()}</p>
+            <p className={styles.messageMemos}>✏️ {memo.message}</p>
+            <p>📬 From: {memo.name} at {memo.timestamp.toString()}</p>
           </div>
         )
       }))}
