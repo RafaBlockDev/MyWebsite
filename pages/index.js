@@ -33,7 +33,7 @@ export default function Home() {
 
       if (accounts.length > 0) {
         const account = accounts[0];
-        alert("Wallet is connected! 🎉" + account);
+        console.log("Wallet is connected! 🎉" + account);
       } else {
         alert("Make sure MetaMask is connected 🦊");
       }
@@ -53,7 +53,6 @@ export default function Home() {
       const accounts = await ethereum.request({
         method: 'eth_requestAccounts'
       });
-
       setCurrentAccount(accounts[0]);
     } catch (error) {
       console.log(error);
@@ -200,7 +199,7 @@ export default function Home() {
           </a>
 
           <a
-          href="https://medium.com/@rafafuentesrangel"
+          href=""
             className={styles.card}
           >
             <h2>Articles &rarr;</h2>
@@ -210,9 +209,8 @@ export default function Home() {
           </a>
 
           <a
-          href="https://medium.com/@rafafuentesrangel"
-            className={styles.card}
-          >
+          href=""
+            className={styles.card}>
             <h2>Portafolio &rarr;</h2>
             <p>
               This is my portafolio where you will find my own projects... 🦾
@@ -272,11 +270,11 @@ export default function Home() {
           </div>
         </div>
       ) : (
-        <button onClick={connectWallet}>Connect 🦊</button>
+        <button className={styles.connectButton} onClick={connectWallet}>Connect 🦊</button>
       )}
       </main>
 
-      {currentAccount && (<h2>Memos received</h2>)}
+      {currentAccount && (<h1>Memos received</h1>)}
 
       {currentAccount && (memos.map((memo, idx) => {
         return (
