@@ -4,9 +4,9 @@ async function main () {
     console.log("📝 Compiling smart contract...")
     const BuyMeACoffee = await hre.ethers.getContractFactory("Coffee");
     console.log("🚀 Deploying smart contract...");
-    const buyCoffee = await BuyMeACoffee.deploy();
-    await buyCoffee.deployed();
-    console.log("Smart contract deployed to: ", buyCoffee.address);
+    const buyMeACoffee = await BuyMeACoffee.deploy();
+    await buyMeACoffee.deployed();
+    console.log("Smart contract deployed to: ", buyMeACoffee.address);
 }
 
 

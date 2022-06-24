@@ -2,17 +2,16 @@ import Head from 'next/head'
 import Image from 'next/image'
 import React, { useEffect, useState } from "react";
 import styles from '../styles/Home.module.css'
-// import abi from "../utils/Contract.json";
-import { ConnectButton } from '@rainbow-me/rainbowkit';
-// import { ethers } from 'hardhat';
+import abi from "../utils/Coffee.json";
+import { ethers } from 'ethers';
 
 export default function Home() {
-  /*
   // Contract address and ABI
-  const contractAddress = "0x3bE20B28657Ff1b9a915f16B0263D5F1D65e0c9d";
+  const contractAddress = "0x538d713e477C0A18469F0e0Dd13304dDE1979522";
   const contractABI = abi.abi
 
   // Component State
+  const [currentAccount, setCurrentAccount] = useState("");
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const [memos, setMemos] = useState("");
@@ -25,32 +24,69 @@ export default function Home() {
     setMessage(event.target.value);
   }
 
-  const buyCoFFee = async () => {
+  const isWalletConnected = async () => {
+    try {
+      const { ethereum } = window;
+
+      const accounts = await ethereum.request({method: 'eth_accounts'})
+      console.log("accounts: ", accounts);
+
+      if (accounts.length > 0) {
+        const account = accounts[0];
+        alert("Wallet is connected! 🎉" + account);
+      } else {
+        alert("Make sure MetaMask is connected 🦊");
+      }
+    } catch (error) {
+      console.log("error: ", error);
+    }
+  }
+
+  const connectWallet = async () => {
     try {
       const {ethereum} = window;
 
-      if(ethereum) {
+      if (!ethereum) {
+        alert("Please install MetaMask 🦊");
+      }
+
+      const accounts = await ethereum.request({
+        method: 'eth_requestAccounts'
+      });
+
+      setCurrentAccount(accounts[0]);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  
+  const buyCoffee = async () => {
+    try {
+      const {ethereum} = window;
+
+      if (ethereum) {
         const provider = new ethers.providers.Web3Provider(ethereum, "any");
-        const signer = provider.getSigners();
-        const BuyMeACoffee = new ethers.Contract(
+        const signer = provider.getSigner();
+        const buyMeACoffee = new ethers.Contract(
           contractAddress,
           contractABI,
           signer
         );
 
-        console.log("Buying coffee...")
-        const coffeeTxn = await buyCoffee.buyCoFFee(
+        console.log("buying coffee..")
+        const coffeeTxn = await buyMeACoffee.buyCoffee(
           name ? name : "anon",
-          message ? message : "Enjoy your coffee",
-          {value: ethers.utils.parseEther("1")}
+          message ? message : "Enjoy your coffee!",
+          {value: ethers.utils.parseEther("0.001")}
         );
 
         await coffeeTxn.wait();
 
         console.log("mined ", coffeeTxn.hash);
-        console.log("coffee purchased");
 
-        // Clear the form fields
+        console.log("coffee purchased!");
+
+        // Clear the form fields.
         setName("");
         setMessage("");
       }
@@ -59,114 +95,73 @@ export default function Home() {
     }
   };
 
+  // Function to fetch all memos stored on-chain.
   const getMemos = async () => {
     try {
       const { ethereum } = window;
-      if(ethereum) {
+      if (ethereum) {
         const provider = new ethers.providers.Web3Provider(ethereum);
         const signer = provider.getSigner();
-        const buyCoffee = new ethers.Contract(
+        const buyMeACoffee = new ethers.Contract(
           contractAddress,
           contractABI,
           signer
         );
-
-        console.log("Fetching memos from the blockchian...");
-        const memos = await buyCoffee.getMemos();
-        console.log("Fetched!!");
+        
+        console.log("fetching memos from the blockchain..");
+        const memos = await buyMeACoffee.getMemos();
+        console.log("fetched!");
         setMemos(memos);
       } else {
         console.log("Metamask is not connected");
       }
+      
     } catch (error) {
       console.log(error);
     }
   };
-
-   useEffect(() => {
-    let buyCoffee;
+  
+  useEffect(() => {
+    let buyMeACoffee;
+    isWalletConnected();
     getMemos();
 
-    const onNewMemos = (from, timestamp, name, message) => {
-      console.log.log("Memo received ", from, timestamp, name, message);
+    // Create an event handler function for when someone sends
+    // us a new memo.
+    const onNewMemo = (from, timestamp, name, message) => {
+      console.log("Memo received: ", from, timestamp, name, message);
       setMemos((prevState) => [
         ...prevState,
         {
           address: from,
-          timestamp: newDate(timestamp * 1000),
+          timestamp: new Date(timestamp * 1000),
           message,
-          className
+          name
         }
       ]);
     };
 
-    const { ethereum } = window;
+    const {ethereum} = window;
 
+    // Listen for new memo events.
     if (ethereum) {
       const provider = new ethers.providers.Web3Provider(ethereum, "any");
       const signer = provider.getSigner();
-      buyCoffee = new ethers.Contract(
+      buyMeACoffee = new ethers.Contract(
         contractAddress,
         contractABI,
         signer
       );
 
-      buyCoffee.on("NewMemo", onNewMemos);
+      buyMeACoffee.on("NewMemo", onNewMemo);
     }
-  }, []);*/
 
-
-  /* 
-          <div className={styles.buyCoffe}>
-          <h2 className={styles.secondTitle}>Buy me a Coffee ☕️</h2>
-
-          <div className={styles.divBoxes}>
-            <form className={styles.formContent}>
-              <div className={styles.formgroup}>
-                <label className={styles.labelText}>
-                    Name 🙈
-                </label>
-                <br/>
-                <div className={styles.formDivInput}>
-                  <input
-                    id="name"
-                    type="text"
-                    placeholer="hola"
-                    onChange={onNameChange}
-                  />
-                </div>
-              </div>
-              <br/>
-
-              <div className={styles.formgroup}>
-                  <label className={styles.labelText}>
-                    Send to Rafa a message
-                  </label>
-                <br/>
-                <div className={styles.formTextDiv}>
-                  <textarea
-                    className={styles.inputCon}
-                    rows={3}
-                    placeholder="Enjoy your coffee!"
-                    id="message"
-                    onChange={onMessageChange}
-                    required
-                  >
-                  </textarea>
-                </div>  
-              </div>
-              <div className={styles.divButton}>
-                <button
-                  type={styles.button}
-                  onClick={buyCoFFee}
-                >
-                  Send coffee
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-  */
+    return () => {
+      if (buyMeACoffee) {
+        buyMeACoffee.off("NewMemo", onNewMemo);
+      }
+    }
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -181,12 +176,9 @@ export default function Home() {
           Hello!  👋🏻  I am <a href="https://twitter.com/Rafael41603219">rafaelfuentes.eth! 👨🏻‍💻</a>
         </h1>
 
-        <ConnectButton />
-
         <p className={styles.description}>
           I am blockchain and web3 developer, consultant and researcher 🌎
         </p>
-
 
         <div className={styles.grid}>
           <a href="https://github.com/RafaBlockDev" className={styles.card}>
@@ -228,6 +220,7 @@ export default function Home() {
           </a>
         </div>
 
+        {currentAccount ? (
         <div className={styles.buyCoffe}>
           <h2 className={styles.secondTitle}>Buy me a Coffee ☕️</h2>
 
@@ -235,15 +228,15 @@ export default function Home() {
             <form className={styles.formContent}>
               <div className={styles.formgroup}>
                 <label className={styles.labelText}>
-                    Name 🙈
+                    What´s your name? 🧐
                 </label>
                 <br/>
                 <div className={styles.formDivInput}>
                   <input
                     id="name"
                     type="text"
-                    placeholer="hola"
-                    ///onChange={onNameChange}
+                    placeholer="anon"
+                    onChange={onNameChange}
                   />
                 </div>
               </div>
@@ -251,7 +244,7 @@ export default function Home() {
 
               <div className={styles.formgroup}>
                   <label className={styles.labelText}>
-                    Send to Rafa a message 💌
+                    Send a message to Rafa 💌
                   </label>
                 <br/>
                 <div className={styles.formTextDiv}>
@@ -260,7 +253,7 @@ export default function Home() {
                     rows={3}
                     placeholder="Enjoy your gift! "
                     id="message"
-                    ///onChange={}
+                    onChange={onMessageChange}
                     required
                   >
                   </textarea>
@@ -270,7 +263,7 @@ export default function Home() {
                 <button
                   type=""
                   className={styles.button}
-                  ///onClick={}
+                  onClick={buyCoffee}
                 >
                   Send ☕️
                 </button>
@@ -278,8 +271,21 @@ export default function Home() {
             </form>
           </div>
         </div>
-
+      ) : (
+        <button onClick={connectWallet}>Connect 🦊</button>
+      )}
       </main>
+
+      {currentAccount && (<h2>Memos received</h2>)}
+
+      {currentAccount && (memos.map((memo, idx) => {
+        return (
+          <div key={idx} style={{border:"2px solid", "border-radius":"5px", padding: "5px", margin: "5px"}}>
+            <p style={{"font-weight":"bold"}}>"{memo.message}"</p>
+            <p>From: {memo.name} at {memo.timestamp.toString()}</p>
+          </div>
+        )
+      }))}
 
       <footer className={styles.footer}>
         <a
