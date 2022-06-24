@@ -220,7 +220,7 @@ export default function Home() {
 
         {currentAccount ? (
         <div className={styles.buyCoffe}>
-          <h2 className={styles.secondTitle}>Buy me a Coffee ☕️</h2>
+          <h2 className={styles.secondTitle}>Buy me a coffee ☕️</h2>
 
           <div className={styles.divBoxes}>
             <form className={styles.formContent}>
@@ -274,12 +274,12 @@ export default function Home() {
       )}
       </main>
 
-      {currentAccount && (<h1>Memos received</h1>)}
+      {currentAccount && (<h1 className={styles.memoRec}>🎉 Memos received 🎉</h1>)}
 
       {currentAccount && (memos.map((memo, idx) => {
         return (
-          <div key={idx} style={{border:"2px solid", "border-radius":"5px", padding: "5px", margin: "5px"}}>
-            <p style={{"font-weight":"bold"}}>"{memo.message}"</p>
+          <div key={idx} className={styles.memoShowMessage}>
+            <p className={styles.messageMemos}>"{memo.message}"</p>
             <p>From: {memo.name} at {memo.timestamp.toString()}</p>
           </div>
         )
