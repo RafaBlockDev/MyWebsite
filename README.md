@@ -15,4 +15,4 @@ Link to my portafolio... 😚
 [Rafa´s portafolio](https://github.com/RafaBlockDev/Personsal-Web3-Projects)
 
 Use hardhat stack to build this website 👨🏻‍💻
-
+Building also using tools for UI / UX...
