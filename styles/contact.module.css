@@ -20,11 +20,11 @@
 }
 
 .info__item span i {
-  color: #01d293;
+  color: #1889f3;
   font-size: 1.2rem;
   padding: 5px;
   border-radius: 5px;
-  background: #01d29338;
+  background: #091bb63a;
 }
 
 .social__links {
@@ -32,7 +32,7 @@
   margin-top: 30px;
   align-items: center;
   column-gap: 1rem;
-  color: #808dad !important;
+  color: black !important;
   font-size: 1.3rem !important;
   cursor: pointer;
 }

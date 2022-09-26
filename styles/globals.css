@@ -15,11 +15,10 @@ a {
 
 * {
   box-sizing: border-box;
-  background: black;
 }
 
 p {
-  color: #f1f1f1;
+  color: black;
   line-height: 30px;
 }
 h1,
@@ -28,7 +27,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 
 h2 {

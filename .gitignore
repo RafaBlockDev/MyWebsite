@@ -35,3 +35,5 @@ yarn-error.log*
 .vercel
 
 buymeacoffee-fe
+
+package-lock.json

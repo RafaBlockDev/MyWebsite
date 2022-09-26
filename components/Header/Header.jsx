@@ -3,6 +3,7 @@ import React, { useRef, useEffect } from "react";
 import { Container } from "reactstrap";
 import classes from "./header.module.css";
 import Link from "next/link";
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 const NAV__LINK = [
   {
@@ -73,10 +74,7 @@ const Header = () => {
               ))}
 
               <div className={`${classes.nav__right}`}>
-                <p className=" d-flex align-items-center gap-2 mb-0">
-                  {" "}
-                  Connect Wallet{" "}
-                </p>
+                <ConnectButton />
               </div>
             </div>
           </div>
