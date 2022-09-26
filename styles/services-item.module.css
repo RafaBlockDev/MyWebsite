@@ -1,5 +1,10 @@
 .service__item {
-  background: #171f38;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(144, 12, 228, 1) 0%,
+    rgba(0, 196, 255, 1) 100%
+  );
   padding: 30px;
   margin-bottom: 30px;
   display: flex;
@@ -9,7 +14,6 @@
 }
 
 .service__item:hover {
-  background: rgb(2, 0, 36);
   background: linear-gradient(
     90deg,
     rgba(2, 0, 36, 1) 0%,
@@ -22,11 +26,11 @@
 }
 
 .service__item:hover i {
-  color: #171f38;
+  color: #ffffff;
 }
 
 .service__item:hover h5 {
-  color: #171f38;
+  color: #f5f7fa;
 }
 
 .service__item span,

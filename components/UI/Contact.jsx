@@ -36,7 +36,7 @@ const Contact = () => {
                 <i className="ri-github-line"></i>
               </Link>
               <Link href="#">
-                <i className="ri-facebook-line"></i>
+                <i class="ri-twitter-line"></i>
               </Link>
               <Link href="#">
                 <i className="ri-linkedin-line"></i>
