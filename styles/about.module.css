@@ -1,0 +1,42 @@
+.about__icon i {
+  color: #1889f3;
+}
+
+.about__img {
+  padding: 10px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(144, 12, 228, 1) 0%,
+    rgba(0, 196, 255, 1) 100%
+  );
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.about__img img {
+  width: 100% !important;
+  border-radius: 5px;
+}
+
+.about__img__box {
+  width: 200px !important;
+}
+
+@media only screen and (max-width: 992px) {
+  .about__img__gallery {
+    justify-content: center !important;
+    margin-top: 50px;
+  }
+
+  .about__content h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .about__img__box {
+    width: 150px !important;
+  }
+}
