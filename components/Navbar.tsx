@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation"
 import { useTheme } from "next-themes"
 import { RiMoonFill, RiSunLine } from "react-icons/ri"
 import { IoMdMenu, IoMdClose } from "react-icons/io"
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 interface NavItem {
   label: string
@@ -94,6 +95,7 @@ export default function Navbar() {
                   <RiMoonFill size={25} />
                 </button>
               )}
+              <ConnectButton />
             </div>
           </div>
         </div>
