@@ -17,7 +17,7 @@ const projects = [
     name: "ERC-4337",
     description:
       "I implement the new ERC-4337 standard by my self, with foundry and testing, also has a subgraph implementation",
-    image: "/portfolio.jpeg",
+    image: "/4337.jpg",
     github: "https://github.com/RafaBlockDev/ERC-4337",
     link: "https://github.com/RafaBlockDev/ERC-4337",
   },
