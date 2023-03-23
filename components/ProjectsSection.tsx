@@ -33,7 +33,7 @@ const projects = [
     name: "NFT Collection",
     description:
       "I created a NFT collection since scratch in foundry as smart contract backend, a subgraph, and a nextJS website interacting with the smart contracts using ethers",
-    image: "/portfolio.jpeg",
+    image: "/collection.png",
     github: "https://github.com/RafaBlockDev/NFT-Collection",
     link: "https://github.com/RafaBlockDev/NFT-Collection",
   },
