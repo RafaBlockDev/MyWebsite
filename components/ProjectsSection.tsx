@@ -9,7 +9,7 @@ const projects = [
     name: "Factory Subgraph",
     description:
       "I built a Factory subgraph that query NFTs from NFT Collections built in a factory contract",
-    image: "/portfolio.jpeg",
+    image: "/subgraph.jpg",
     github: "https://github.com/hqasmei/katorfamilyphotos",
     link: "https://github.com/RafaBlockDev/Factory-Subgraph",
   },
