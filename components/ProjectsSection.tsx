@@ -41,7 +41,7 @@ const projects = [
     name: "MEV and Flashbots",
     description:
       "I created flashbots in hardhat, where I document each part of the code, interesting practice of MEV and flashbots",
-    image: "/portfolio.jpeg",
+    image: "/mev.jpg",
     github: "https://github.com/RafaBlockDev/Flashbots-Labs",
     link: "https://github.com/RafaBlockDev/Flashbots-Labs",
   },
