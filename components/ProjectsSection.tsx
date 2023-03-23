@@ -9,7 +9,7 @@ const projects = [
     name: "Factory Subgraph",
     description:
       "I built a Factory subgraph that query NFTs from NFT Collections built in a factory contract",
-    image: "/portfolio.jpeg",
+    image: "/subgraph.jpg",
     github: "https://github.com/hqasmei/katorfamilyphotos",
     link: "https://github.com/RafaBlockDev/Factory-Subgraph",
   },
@@ -17,7 +17,7 @@ const projects = [
     name: "ERC-4337",
     description:
       "I implement the new ERC-4337 standard by my self, with foundry and testing, also has a subgraph implementation",
-    image: "/portfolio.jpeg",
+    image: "/4337.jpg",
     github: "https://github.com/RafaBlockDev/ERC-4337",
     link: "https://github.com/RafaBlockDev/ERC-4337",
   },
@@ -25,7 +25,7 @@ const projects = [
     name: "Automated Market Maker",
     description:
       "I created an AMM using Uniswap router and secure implementations provided by the biggest AMM in web3",
-    image: "/portfolio.jpeg",
+    image: "/amm.jpg",
     github: "https://github.com/RafaBlockDev/Lending-Pool",
     link: "https://github.com/RafaBlockDev/Lending-Pool",
   },
@@ -33,7 +33,7 @@ const projects = [
     name: "NFT Collection",
     description:
       "I created a NFT collection since scratch in foundry as smart contract backend, a subgraph, and a nextJS website interacting with the smart contracts using ethers",
-    image: "/portfolio.jpeg",
+    image: "/collection.png",
     github: "https://github.com/RafaBlockDev/NFT-Collection",
     link: "https://github.com/RafaBlockDev/NFT-Collection",
   },
@@ -41,7 +41,7 @@ const projects = [
     name: "MEV and Flashbots",
     description:
       "I created flashbots in hardhat, where I document each part of the code, interesting practice of MEV and flashbots",
-    image: "/portfolio.jpeg",
+    image: "/mev.jpg",
     github: "https://github.com/RafaBlockDev/Flashbots-Labs",
     link: "https://github.com/RafaBlockDev/Flashbots-Labs",
   },
