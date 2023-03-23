@@ -25,7 +25,7 @@ const projects = [
     name: "Automated Market Maker",
     description:
       "I created an AMM using Uniswap router and secure implementations provided by the biggest AMM in web3",
-    image: "/portfolio.jpeg",
+    image: "/amm.jpg",
     github: "https://github.com/RafaBlockDev/Lending-Pool",
     link: "https://github.com/RafaBlockDev/Lending-Pool",
   },
