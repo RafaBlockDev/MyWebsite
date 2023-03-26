@@ -14,12 +14,12 @@ const projects = [
     link: "https://github.com/RafaBlockDev/Factory-Subgraph",
   },
   {
-    name: "ERC-4337",
+    name: "Substrate Blockchain",
     description:
-      "I implement the new ERC-4337 standard by my self, with foundry and testing, also has a subgraph implementation",
-    image: "/4337.jpg",
-    github: "https://github.com/RafaBlockDev/ERC-4337",
-    link: "https://github.com/RafaBlockDev/ERC-4337",
+      "I create a blockchain using substrate framework using RUST language",
+    image: "/substrate.jpg",
+    github: "https://github.com/RafaBlockDev/Substrate-Blockchain",
+    link: "https://github.com/RafaBlockDev/Substrate-Blockchain",
   },
   {
     name: "Automated Market Maker",
