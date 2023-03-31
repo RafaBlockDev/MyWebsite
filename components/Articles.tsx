@@ -7,7 +7,7 @@ const projects = [
   {
     name: "Articles and Tutorials",
     image: "/profile.jpg",
-    link: "https://github.com/RafaBlockDev/Factory-Subgraph",
+    link: "https://mirror.xyz/0x6E99Ea70FF32E76bEa93e9a228C33Fe312911fF3",
   }
 ]
 
@@ -24,8 +24,8 @@ const ProjectsSection = () => {
           return (
             <div key={idx}>
               <SlideUp offset="-300px 0px -300px 0px">
-                <div className="flex flex-col  animate-slideUpCubiBezier animation-delay-2 md:flex-row md:space-x-12">
-                  <div className=" md:w-1/2">
+                <div className="flex animate-slideUpCubiBezier animation-delay-2 md:flex-row md:space-x-12">
+                  <div className=" md:w-2/2">
                     <Link href={project.link}>
                       <Image
                         src={project.image}
