@@ -26,6 +26,10 @@ const NAV_ITEMS: Array<NavItem> = [
     label: "Projects",
     page: "projects",
   },
+  {
+    label: "Articles",
+    page: "articles",
+  }
 ]
 
 export default function Navbar() {
