@@ -6,7 +6,6 @@ import QuestionSlide from "./QuestionSlide"
 import MultipleChoiceSlide from "./MultipleChoiceSlide"
 import AddressFormSlide from "./AddressFormSlide"
 import EndSlide from "./EndSlide"
-import NavbarForm from "./NavbarForm"
 import SingleChoiceSlide from "./SingleChoiceSlide"
 
 const questions = [
@@ -175,7 +174,7 @@ export default function FormContainer() {
             }
           </>
         )}
-        {currentSlide === questions.length + 1 && <EndSlide answers={answers} />}
+        {currentSlide === questions.length + 1 && <EndSlide />}
       </div>
     </div>
   )
